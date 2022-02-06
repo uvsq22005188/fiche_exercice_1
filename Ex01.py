@@ -4,7 +4,6 @@
 # Import des librairies
 
 import tkinter as tk
-from turtle import color
 
 ############################
 # Constantes
