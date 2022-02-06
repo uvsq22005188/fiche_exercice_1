@@ -4,6 +4,7 @@
 # Import des librairies
 
 import tkinter as tk
+from turtle import color
 
 ############################
 # Constantes
@@ -25,14 +26,12 @@ def changer_couleur(event):
     """Change la couleur du rectangle dans le canvas si et seulement si le clique souris à lieu sur le rectangle."""
     global compteur
     if event.x >= 0 and event.x <= REC_LARGEUR and event.y >= 0 and event.y <= REC_HAUTEUR:
-        couleur = ["red", "blue"]
-        compteur += 1
-        i = compteur % 2
-        canvas.itemconfigure(rectangle, fill=couleur[i])
-        print(compteur)
+        if canvas.itemcget(rectangle, "fill") == "red":
+            canvas.itemconfigure(rectangle, fill="blue")
+        else:
+            canvas.itemconfigure(rectangle, fill="red")
     else:
         canvas.unbind("<Button-1>")
-        compteur = 0
         
 
 def recommencer():
