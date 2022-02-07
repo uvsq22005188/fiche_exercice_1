@@ -17,9 +17,9 @@ REC_HAUTEUR = 250
 # Variables
 
 compteur = 0
+
 ############################
 # Fonctions
-
 
 def changer_couleur(event):
     """Change la couleur du rectangle dans le canvas si et seulement si le clique souris à lieu sur le rectangle."""
@@ -37,7 +37,6 @@ def recommencer():
     """Applique la couleur rouge au rectangle et active le clique gauche de la souris"""
     canvas.itemconfigure(rectangle, fill="red")
     canvas.bind("<Button-1>", changer_couleur)
-
 
 ########################################################
 # Partie principale

@@ -4,10 +4,6 @@
 # Import des librairies
 
 import tkinter as tk
-from turtle import color
-
-from matplotlib.pyplot import fill, pause
-from pyparsing import line
 
 ############################
 # Constantes
@@ -26,6 +22,7 @@ compteur2 = 0
 # Fonctions
 
 def ligne(event):
+    """fonction qui place une ligne au niveau des cliques souris et les supprime ensuite au bout du 5eme clique."""
     global compteur, x1, y1, x2, y2, x3, y3, x4, y4, ligne_bleue, ligne_rouge
     if compteur == 0:
         x1 = event.x
@@ -51,6 +48,7 @@ def ligne(event):
 
 
 def pause_restart():
+    """fonction qui suspend le programme"""
     global compteur2
     if compteur2 == 0:
         canvas.unbind("<Button-1>")
@@ -60,6 +58,7 @@ def pause_restart():
         canvas.bind("<Button-1>", ligne)
         bouton_pause.configure(text="Pause")
         compteur2 = 0
+
 ########################################################
 # Partie principale
 
@@ -74,7 +73,6 @@ content = tk.Frame(root)
 #Canvas
 canvas = tk.Canvas(content, height=HAUTEUR, width=LARGEUR, bg="white")
 
-
 #Bouton
 bouton_pause = tk.Button(content, text="Pause", command=pause_restart)
 
@@ -83,7 +81,6 @@ bouton_pause = tk.Button(content, text="Pause", command=pause_restart)
 content.grid(column=0, row=0)
 canvas.grid(column=0, row=0)
 bouton_pause.grid(column=0, row=1)
-
 
 #Evenement
 canvas.bind("<Button-1>", ligne)
