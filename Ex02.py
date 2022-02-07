@@ -15,7 +15,7 @@ LARGEUR = 500
 ############################
 # Variables
 
-compteur = 0
+compteur1 = 0
 compteur2 = 0
 
 ############################
@@ -23,28 +23,28 @@ compteur2 = 0
 
 def ligne(event):
     """fonction qui place une ligne au niveau des cliques souris et les supprime ensuite au bout du 5eme clique."""
-    global compteur, x1, y1, x2, y2, x3, y3, x4, y4, ligne_bleue, ligne_rouge
-    if compteur == 0:
+    global compteur1, x1, y1, x2, y2, x3, y3, x4, y4, ligne_bleue, ligne_rouge
+    if compteur1 == 0:
         x1 = event.x
         y1 = event.y
-        compteur += 1   
-    elif compteur == 1:
+        compteur1 += 1   
+    elif compteur1 == 1:
         x2 = event.x
         y2 = event.y 
         ligne_bleue = canvas.create_line(x1,y1,x2,y2, fill="blue")
-        compteur += 1
-    elif compteur == 2:
+        compteur1 += 1
+    elif compteur1 == 2:
         x3 = event.x
         y3 = event.y
-        compteur += 1
-    elif compteur == 3:
+        compteur1 += 1
+    elif compteur1 == 3:
         x4 = event.x
         y4 = event.y
         ligne_rouge = canvas.create_line(x3,y3,x4,y4, fill="red")
-        compteur += 1
-    elif compteur == 4:
+        compteur1 += 1
+    elif compteur1 == 4:
         canvas.delete(ligne_bleue, ligne_rouge)
-        compteur = 0
+        compteur1 = 0
 
 
 def pause_restart():
