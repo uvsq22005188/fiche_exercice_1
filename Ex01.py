@@ -16,14 +16,11 @@ REC_HAUTEUR = 250
 ############################
 # Variables
 
-compteur = 0
-
 ############################
 # Fonctions
 
 def changer_couleur(event):
     """Change la couleur du rectangle dans le canvas si et seulement si le clique souris à lieu sur le rectangle."""
-    global compteur
     if event.x >= 0 and event.x <= REC_LARGEUR and event.y >= 0 and event.y <= REC_HAUTEUR:
         if canvas.itemcget(rectangle, "fill") == "red":
             canvas.itemconfigure(rectangle, fill="blue")
