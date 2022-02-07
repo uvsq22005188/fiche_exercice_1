@@ -23,7 +23,7 @@ nombre_cercle = 0
 # Fonctions
 
 def placer_figures(event):
-    """fonction qui créer les figures si les conditions sont respectés"""
+    """fonction qui créer les figures si les conditions sont respectés."""
     global nombre_croix, nombre_carre, nombre_cercle
     if nombre_croix < 2 and nombre_carre < 3 and event.x < LARGEUR/3:
         x0_rec = event.x - COTE_CARRE / 2
@@ -55,7 +55,7 @@ def placer_figures(event):
 
 
 def redemarrer():
-    """fonction qui supprime les figures"""
+    """fonction qui supprime les figures."""
     global nombre_carre, nombre_cercle, nombre_croix
     canvas.delete("figures")
     canvas.dtag("figures")
