@@ -49,15 +49,12 @@ def ligne(event):
 
 def pause_restart():
     """fonction qui suspend le programme"""
-    global compteur2
-    if compteur2 == 0:
+    if bouton_pause.cget("text") == "Pause":
         canvas.unbind("<Button-1>")
         bouton_pause.configure(text="Restart")
-        compteur2 += 1
     else:
         canvas.bind("<Button-1>", ligne)
         bouton_pause.configure(text="Pause")
-        compteur2 = 0
 
 ########################################################
 # Partie principale

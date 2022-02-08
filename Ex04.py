@@ -5,6 +5,8 @@
 
 import tkinter as tk
 
+from matplotlib.pyplot import pause
+
 ############################
 # Constantes
 
@@ -23,7 +25,7 @@ TAILLE_MIN = 20
 # Fonctions
 
 def afficher_carré(event):
-    """"""
+    """fonction qui augmente la taille du carré si le clique est en dehors de celui-ci ou sinon baisse la taille du carré si le clique est sur le carré."""
     global carré, COTE_CARRE
     if COTE_CARRE >= 20 and event.x > LARGEUR / 2 - COTE_CARRE / 2 and event.x < LARGEUR / 2 + COTE_CARRE / 2 and event.y > HAUTEUR / 2 - COTE_CARRE / 2 and event.y < HAUTEUR / 2 + COTE_CARRE / 2:
         canvas.delete(carré)
@@ -37,9 +39,14 @@ def afficher_carré(event):
 
 
 
-def pause_programme():
+def pause_restart():
     """fonction qui suspend le programme"""
-    
+    if bouton_pause.cget("text") == "Pause":
+        canvas.unbind("<Button-1>")
+        bouton_pause.configure(text="Restart")
+    else:
+        canvas.bind("<Button-1>", afficher_carré)
+        bouton_pause.configure(text="Pause")
 
 ########################################################
 # Partie principale
@@ -57,7 +64,7 @@ canvas = tk.Canvas(content, height=HAUTEUR, width=LARGEUR, bg="white")
 carré = canvas.create_rectangle(LARGEUR / 2 - COTE_CARRE / 2, HAUTEUR / 2 + COTE_CARRE / 2, LARGEUR / 2 + COTE_CARRE / 2, HAUTEUR / 2 - COTE_CARRE / 2, fill="red")
 
 #Bouton
-bouton_pause = tk.Button(content, text="Pause", command=pause_programme)
+bouton_pause = tk.Button(content, text="Pause", command=pause_restart)
 
 ############################
 #Placement des widgets
