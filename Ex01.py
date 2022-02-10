@@ -21,11 +21,10 @@ BG_COLOR = "black"
 
 def changer_couleur(event):
     """Change la couleur du rectangle dans le canvas si et seulement si le clique souris à lieu sur le rectangle."""
-    if event.x >= 0 and event.x <= REC_LARGEUR and event.y >= 0 and event.y <= REC_HAUTEUR:
-        if canvas.itemcget(rectangle, "fill") == "red":
-            canvas.itemconfigure(rectangle, fill="blue")
-        else:
-            canvas.itemconfigure(rectangle, fill="red")
+    if canvas.find_withtag("current") and canvas.itemcget("current", "fill") == "red":
+        canvas.itemconfigure(rectangle, fill="blue")
+    elif canvas.find_withtag("current") and canvas.itemcget("current", "fill") == "blue":
+        canvas.itemconfigure(rectangle, fill="red")
     else:
         canvas.unbind("<Button-1>")
         
