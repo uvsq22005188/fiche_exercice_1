@@ -31,10 +31,10 @@ def placer_figures(event):
         y0_rec = event.y - COTE_CARRE / 2
         x1_rec = x0_rec + COTE_CARRE
         y1_rec = y0_rec + COTE_CARRE
-        canvas.create_rectangle(x0_rec, y0_rec, x1_rec, y1_rec, outline="blue")
+        canvas.create_rectangle(x0_rec, y0_rec, x1_rec, y1_rec, outline="blue", width=5)
         nombre_carre += 1
-        canvas.create_line(x0_rec, y0_rec, x1_rec, y1_rec, fill="blue")
-        canvas.create_line(x1_rec, y0_rec, x0_rec, y1_rec, fill="blue")
+        canvas.create_line(x0_rec, y0_rec, x1_rec, y1_rec, fill="blue", width=5)
+        canvas.create_line(x1_rec, y0_rec, x0_rec, y1_rec, fill="blue", width=5)
         nombre_croix += 1
         canvas.addtag_all("figures")
     elif nombre_carre < 3 and event.x > LARGEUR / 3 and event.x < LARGEUR * 2 / 3:
@@ -42,7 +42,7 @@ def placer_figures(event):
         y0_rec = event.y - COTE_CARRE / 2
         x1_rec = x0_rec + COTE_CARRE
         y1_rec = y0_rec + COTE_CARRE
-        canvas.create_rectangle(x0_rec, y0_rec, x1_rec, y1_rec, outline="green")
+        canvas.create_rectangle(x0_rec, y0_rec, x1_rec, y1_rec, outline="green", width=5)
         nombre_carre += 1
         canvas.addtag_all("figures")
     elif nombre_cercle < 3 and event.x > LARGEUR * 2 / 3:
@@ -50,7 +50,7 @@ def placer_figures(event):
         y0_rec = event.y - COTE_CARRE / 2
         x1_rec = x0_rec + COTE_CARRE
         y1_rec = y0_rec + COTE_CARRE
-        canvas.create_oval(x0_rec, y0_rec, x1_rec, y1_rec, outline="red")
+        canvas.create_oval(x0_rec, y0_rec, x1_rec, y1_rec, outline="red", width=5)
         nombre_cercle += 1
         canvas.addtag_all("figures")
 
@@ -60,8 +60,8 @@ def redemarrer():
     global nombre_carre, nombre_cercle, nombre_croix
     canvas.delete("figures")
     canvas.dtag("figures")
-    canvas.create_line(LARGEUR/3, HAUTEUR, LARGEUR/3, 0, fill="white")
-    canvas.create_line(LARGEUR*2/3, HAUTEUR, LARGEUR*2/3, 0, fill="white")
+    canvas.create_line(LARGEUR/3, HAUTEUR, LARGEUR/3, 0, fill="white", width=5)
+    canvas.create_line(LARGEUR*2/3, HAUTEUR, LARGEUR*2/3, 0, fill="white", width=5)
     nombre_carre = 0
     nombre_cercle = 0
     nombre_croix = 0
@@ -79,8 +79,8 @@ content = tk.Frame(root)
 
 #Canvas
 canvas = tk.Canvas(content, height=HAUTEUR, width=LARGEUR, bg=BG_COLOR)
-canvas.create_line(LARGEUR/3, HAUTEUR, LARGEUR/3, 0, fill="white")
-canvas.create_line(LARGEUR*2/3, HAUTEUR, LARGEUR*2/3, 0, fill="white")
+canvas.create_line(LARGEUR/3, HAUTEUR, LARGEUR/3, 0, fill="white", width=5)
+canvas.create_line(LARGEUR*2/3, HAUTEUR, LARGEUR*2/3, 0, fill="white", width=5)
 
 #Bouton
 bouton_redemarrer = tk.Button(content, text="Redémarrer", command=redemarrer)

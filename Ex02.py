@@ -31,7 +31,7 @@ def ligne(event):
     elif compteur1 == 1:
         x2 = event.x
         y2 = event.y 
-        ligne_bleue = canvas.create_line(x1,y1,x2,y2, fill="blue")
+        ligne_bleue = canvas.create_line(x1,y1,x2,y2, fill="blue", width=5)
         compteur1 += 1
     elif compteur1 == 2:
         x3 = event.x
@@ -40,7 +40,7 @@ def ligne(event):
     elif compteur1 == 3:
         x4 = event.x
         y4 = event.y
-        ligne_rouge = canvas.create_line(x3,y3,x4,y4, fill="red")
+        ligne_rouge = canvas.create_line(x3,y3,x4,y4, fill="red", width=5)
         compteur1 += 1
     elif compteur1 == 4:
         canvas.delete(ligne_bleue, ligne_rouge)
