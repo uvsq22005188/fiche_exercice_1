@@ -12,7 +12,7 @@ HAUTEUR = 500
 LARGEUR = 500
 REC_LARGEUR = 400
 REC_HAUTEUR = 250
-
+BG_COLOR = "black"
 ############################
 # Variables
 
@@ -47,7 +47,7 @@ root.title("Exercice 01")
 content = tk.Frame(root) 
 
 #Canvas
-canvas = tk.Canvas(content, height=HAUTEUR, width=LARGEUR, bg="black")
+canvas = tk.Canvas(content, height=HAUTEUR, width=LARGEUR, bg=BG_COLOR)
 rectangle = canvas.create_rectangle(0, 0, REC_LARGEUR, REC_HAUTEUR, fill="red")
 
 #Bouton

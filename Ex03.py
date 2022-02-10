@@ -11,6 +11,7 @@ import tkinter as tk
 HAUTEUR = 500
 LARGEUR = 500
 COTE_CARRE = 50
+BG_COLOR = "black"
 
 ############################
 # Variables
@@ -77,7 +78,7 @@ root.title("Exercice 03")
 content = tk.Frame(root) 
 
 #Canvas
-canvas = tk.Canvas(content, height=HAUTEUR, width=LARGEUR, bg="black")
+canvas = tk.Canvas(content, height=HAUTEUR, width=LARGEUR, bg=BG_COLOR)
 canvas.create_line(LARGEUR/3, HAUTEUR, LARGEUR/3, 0, fill="white")
 canvas.create_line(LARGEUR*2/3, HAUTEUR, LARGEUR*2/3, 0, fill="white")
 

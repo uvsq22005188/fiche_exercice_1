@@ -10,7 +10,7 @@ import tkinter as tk
 
 HAUTEUR = 500
 LARGEUR = 500
-
+BG_COLOR = "white"
 
 ############################
 # Variables
@@ -68,7 +68,7 @@ root.title("Exercice 02")
 content = tk.Frame(root) 
 
 #Canvas
-canvas = tk.Canvas(content, height=HAUTEUR, width=LARGEUR, bg="white")
+canvas = tk.Canvas(content, height=HAUTEUR, width=LARGEUR, bg=BG_COLOR)
 
 #Bouton
 bouton_pause = tk.Button(content, text="Pause", command=pause_restart)

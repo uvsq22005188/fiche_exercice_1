@@ -5,8 +5,6 @@
 
 import tkinter as tk
 
-from matplotlib.pyplot import pause
-
 ############################
 # Constantes
 
@@ -15,6 +13,7 @@ LARGEUR = 500
 COTE_CARRE = 50
 TAILLE_MAX = 100
 TAILLE_MIN = 20
+BG_COLOR = "white"
 
 ############################
 # Variables
@@ -60,7 +59,7 @@ root.title("Exercice 04")
 content = tk.Frame(root) 
 
 #Canvas
-canvas = tk.Canvas(content, height=HAUTEUR, width=LARGEUR, bg="white")
+canvas = tk.Canvas(content, height=HAUTEUR, width=LARGEUR, bg=BG_COLOR)
 carré = canvas.create_rectangle(LARGEUR / 2 - COTE_CARRE / 2, HAUTEUR / 2 + COTE_CARRE / 2, LARGEUR / 2 + COTE_CARRE / 2, HAUTEUR / 2 - COTE_CARRE / 2, fill="red")
 
 #Bouton
